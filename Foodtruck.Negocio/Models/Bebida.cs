@@ -1,16 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Foodtruck.Negocio.Models
 {
-    public class Bebida
+    public class Bebida : Produto
     {
-        public long Id { get; set; }
-        public String Nome { get; set; }
-        public Decimal Valor { get; set; }
         public float Tamanho { get; set; }
+
+        [ForeignKey("Bebidas")]
+        public override ICollection<Pedido> Pedidos { get; set; }
+
+
+        public override String Descrever()
+        {
+            return String.Format($"{this.Id} - {this.Nome} - {this.Valor} - {this.Tamanho}ml");
+        }
     }
 }

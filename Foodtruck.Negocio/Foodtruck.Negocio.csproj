@@ -30,7 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,16 +52,15 @@
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Lanche.cs" />
     <Compile Include="Models\Pedido.cs" />
+    <Compile Include="Models\Produto.cs" />
     <Compile Include="Persistencia\Banco.cs" />
     <Compile Include="Persistencia\Dados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validacao.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Foodtruck.Persistencia\Foodtruck.Persistencia.csproj">
-      <Project>{841f135f-18e7-48f4-aa94-c674eaf5cc01}</Project>
-      <Name>Foodtruck.Persistencia</Name>
-    </ProjectReference>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
